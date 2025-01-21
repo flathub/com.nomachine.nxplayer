@@ -30,18 +30,18 @@ modules:
       - type: extra-data
         only-arches:
           - x86_64
-        url: https://download.nomachine.com/download/8.14/Linux/nomachine-enterprise-client_8.14.2_1_x86_64.tar.gz
-        sha256: 5ad62132d2b160383e498e145c5486c27572c869c137a934d03a421173acc4c9
+        url: https://download.nomachine.com/packages/8.15-PRODUCTION/Linux/nomachine-enterprise-desktop_8.15.3_1_x86_64.tar.gz
+        sha256: 2e0395838b45a7a40333c1bddfb251a93816ddaad8140b099d488573785ebb84
         filename: nomachine-enterprise-client.tar.gz
-        size: 43704225
+        size: 117837624
         # https://downloads.nomachine.com/download/?id=15
       - type: extra-data
         only-arches:
           - aarch64
-        url: https://download.nomachine.com/download/8.14/Arm/nomachine-enterprise-client_8.14.2_1_aarch64.tar.gz
-        sha256: ebb375aedfa95772a8d2e5a61ba7257189fccc019c237ffe17f040edbd0a2b45
+        url: https://download.nomachine.com/packages/8.15-PRODUCTION/Arm/nomachine-enterprise-desktop_8.15.3_1_aarch64.tar.gz
+        sha256: 2564df38f70a03f9d6ee238e2a01df13736d551958a862e5d4e95ce3f19d5861
         filename: nomachine-enterprise-client.tar.gz
-        size: 39983198
+        size: 113289769
         # https://downloads.nomachine.com/download/?id=86&distro=ARM
       - type: file
         path: data/com.nomachine.nxplayer.png
@@ -53,7 +53,8 @@ modules:
         dest-filename: apply_extra
         commands:
           - tar -xf nomachine-enterprise-client.tar.gz --strip-components 0
-          - NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null
+          - chmod 0755 /app/extra
+          - NX_INSTALL_PREFIX=/app/extra ./NX/nxserver --install fedora > /dev/null
             2>&1
       - type: script
         dest-filename: launch_nxplayer
