@@ -12,8 +12,7 @@ tags:
 
 finish-args:
   - --device=dri
-  - --device=input
-  - --device=usb
+  - --device=all # For backward compatibility, in the future we should use 'input' and 'usb'
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
