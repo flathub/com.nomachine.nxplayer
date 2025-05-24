@@ -68,8 +68,10 @@ modules:
       - type: script
         dest-filename: apply_extra
         commands:
-          - tar -xf nomachine-enterprise-client.tar.gz --strip-components=0
-          - NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null 2>&1
+          - |
+            tar -xf nomachine-enterprise-client.tar.gz --strip-components=0
+            NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null 2>&1
+            rm /app/extra/NX/lib/libstdc++.so.6 #remove the bundled libstdc++.so.6 to avoid conflicts with runtime libs
 
       - type: script
         dest-filename: launch_nxplayer
