@@ -1,60 +1,76 @@
 app-id: com.nomachine.nxplayer
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 command: launch_nxplayer
+
 tags:
   - proprietary
+  - network
+  - remote-desktop
 
 finish-args:
   - --device=dri
+  - --device=input
+  - --device=usb
+  - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
-  - --persist=.nx
+  - --filesystem=xdg-music
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-videos
+  - --filesystem=~/.nx:create
+  - --filesystem=~/.ssh:ro
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
   - --socket=x11
+  - --socket=ssh-auth
+  - --socket=cups
+  - --socket=pcsc
 
 modules:
-  - name: nomachine
+  - name: nomachine-enterprise-client
     buildsystem: simple
     build-commands:
-      - install -D $FLATPAK_ID.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
-      - install -D $FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
-      - install -D $FLATPAK_ID.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
-      - install -D apply_extra $FLATPAK_DEST/bin/apply_extra
-      - install -D launch_nxplayer $FLATPAK_DEST/bin/launch_nxplayer
+      - install -D com.nomachine.nxplayer.png /app/share/icons/hicolor/256x256/apps/com.nomachine.nxplayer.png
+      - install -D com.nomachine.nxplayer.desktop /app/share/applications/com.nomachine.nxplayer.desktop
+      - install -D com.nomachine.nxplayer.metainfo.xml /app/share/metainfo/com.nomachine.nxplayer.metainfo.xml
+      - install -D apply_extra /app/bin/apply_extra
+      - install -D launch_nxplayer /app/bin/launch_nxplayer
     sources:
       - type: extra-data
         only-arches:
           - x86_64
-        url: https://download.nomachine.com/download/8.14/Linux/nomachine-enterprise-client_8.14.2_1_x86_64.tar.gz
-        sha256: 5ad62132d2b160383e498e145c5486c27572c869c137a934d03a421173acc4c9
+        url: https://download.nomachine.com/download/9.0/Linux/nomachine-enterprise-client_9.0.188_11_x86_64.tar.gz
+        sha256: 12da61ef41b6dc4cf53a86a7d63071ac2da9d12f4e37fe47f2f22a71bc19dd9e
         filename: nomachine-enterprise-client.tar.gz
-        size: 43704225
-        # https://downloads.nomachine.com/download/?id=15
+        size: 62044936
+
       - type: extra-data
         only-arches:
           - aarch64
-        url: https://download.nomachine.com/download/8.14/Arm/nomachine-enterprise-client_8.14.2_1_aarch64.tar.gz
+        url: https://download.nomachine.com/download/9.0/Arm/nomachine-enterprise-client_9.0.188_11_aarch64.tar.gz
         sha256: ebb375aedfa95772a8d2e5a61ba7257189fccc019c237ffe17f040edbd0a2b45
         filename: nomachine-enterprise-client.tar.gz
-        size: 39983198
-        # https://downloads.nomachine.com/download/?id=86&distro=ARM
+        size: 57440036
+
       - type: file
         path: data/com.nomachine.nxplayer.png
+
       - type: file
         path: data/com.nomachine.nxplayer.desktop
+
       - type: file
         path: com.nomachine.nxplayer.metainfo.xml
+
       - type: script
         dest-filename: apply_extra
         commands:
-          - tar -xf nomachine-enterprise-client.tar.gz --strip-components 0
-          - NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null
-            2>&1
+          - tar -xf nomachine-enterprise-client.tar.gz --strip-components=0
+          - NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null 2>&1
+
       - type: script
         dest-filename: launch_nxplayer
         commands:

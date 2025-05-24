@@ -9,25 +9,20 @@
   <summary>Access NoMachine computers over the network</summary>
 
   <description>
-    <p>Enterprise Client enables fast and secure access to your remote PC or desktop computer where you have installed one of the NoMachine server products. It provides a powerful connection interface, named the NoMachine Player, packed with all the features you need to work with your remote desktop. This package is available for those who prefer just a standalone "client-side" application, either because regulatory requirements dictate that connecting clients must stay as thin clients, or simply because a scaled-down client app is your personal preference. It's free to download and can be used to connect remotely from any Windows, Linux, Mac, ARM or Raspberry device to a computer where you have installed a NoMachine Enterprise product or the NoMachine Free Edition.</p>
-    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by NoMachine.</p>
+    <p>The NoMachine Enterprise Client enables fast and secure access to your remote PC or desktop computer where you have installed one of the NoMachine server products. It provides a powerful connection interface—NoMachine Player—packed with all the features needed to work with your remote desktop.</p>
+    <p>This standalone client-side application is ideal for users seeking a lightweight remote desktop solution or meeting regulatory constraints that prohibit full server installations. It supports connections to systems running NoMachine Enterprise or the Free Edition, and is available for Windows, Linux, macOS, ARM, and Raspberry Pi devices.</p>
+    <p><b>Disclaimer:</b> This Flatpak wrapper is not verified by, affiliated with, or supported by NoMachine S.à r.l.</p>
   </description>
 
   <developer id="com.nomachine">
-    <name translate="no">NoMachine S.à r.l.</name>
+    <name>NoMachine S.à r.l.</name>
   </developer>
-
-  <supports>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>touch</control>
-  </supports>
 
   <launchable type="desktop-id">com.nomachine.nxplayer.desktop</launchable>
 
   <screenshots>
     <screenshot type="default">
-      <caption>Machines</caption>
+      <caption>Main interface</caption>
       <image>https://github.com/flathub/com.nomachine.nxplayer/raw/master/screenshots/nxplayer.png</image>
     </screenshot>
   </screenshots>
@@ -37,12 +32,22 @@
 
   <categories>
     <category>Network</category>
+    <category>RemoteAccess</category>
   </categories>
 
+  <content_rating type="oars-1.1"/>
+
   <releases>
-    <release version="8.11.3" date="2024-01-30"/>
+    <release version="9.0.188_11" date="2025-05-23"/>
   </releases>
 
+  <provides>
+    <binary>nxplayer</binary>
+  </provides>
 
-  <content_rating type="oars-1.1"/>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
 </component>
