@@ -11,8 +11,7 @@ tags:
   - remote-desktop
 
 finish-args:
-  - --device=dri
-  - --device=all # For backward compatibility, in the future we should use 'input' and 'usb'
+  - --device=all # For backward compatibility, in the future we should use 'dri', 'input', and 'usb'
   - --filesystem=xdg-desktop
   - --filesystem=xdg-documents
   - --filesystem=xdg-download
@@ -33,11 +32,11 @@ modules:
   - name: nomachine-enterprise-client
     buildsystem: simple
     build-commands:
-      - install -D com.nomachine.nxplayer.png /app/share/icons/hicolor/256x256/apps/com.nomachine.nxplayer.png
-      - install -D com.nomachine.nxplayer.desktop /app/share/applications/com.nomachine.nxplayer.desktop
-      - install -D com.nomachine.nxplayer.metainfo.xml /app/share/metainfo/com.nomachine.nxplayer.metainfo.xml
-      - install -D apply_extra /app/bin/apply_extra
-      - install -D launch_nxplayer /app/bin/launch_nxplayer
+      - install -D $FLATPAK_ID.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
+      - install -D $FLATPAK_ID.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
+      - install -D $FLATPAK_ID.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - install -D apply_extra $FLATPAK_DEST/bin/apply_extra
+      - install -D launch_nxplayer $FLATPAK_DEST/bin/launch_nxplayer
     sources:
       - type: extra-data
         only-arches:
