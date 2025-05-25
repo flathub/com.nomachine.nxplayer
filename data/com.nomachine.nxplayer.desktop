@@ -1,9 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
+Name=NoMachine Enterprise Client
 Comment=Access NoMachine computers over the network
 Exec=launch_nxplayer
 Icon=com.nomachine.nxplayer
-Name=NoMachine
-StartupWMClass=nxplayer.bin
+Terminal=false
 Type=Application
-Categories=Network;
+Categories=Network;RemoteAccess;
+StartupWMClass=nxplayer.bin
