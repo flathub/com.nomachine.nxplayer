@@ -50,7 +50,7 @@ modules:
         only-arches:
           - aarch64
         url: https://download.nomachine.com/download/9.0/Arm/nomachine-enterprise-client_9.0.188_11_aarch64.tar.gz
-        sha256: ebb375aedfa95772a8d2e5a61ba7257189fccc019c237ffe17f040edbd0a2b45
+        sha256: 813878c66b6f297a469520f714a1f589af219363cf02691f2b063edeb165695e
         filename: nomachine-enterprise-client.tar.gz
         size: 57440036
 
