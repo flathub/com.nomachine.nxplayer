@@ -9,8 +9,8 @@
   <summary>Access NoMachine computers over the network</summary>
 
   <description>
+    <p>**NOTE: This wrapper is not verified by, affiliated with, or supported by NoMachine.**</p>
     <p>Enterprise Client enables fast and secure access to your remote PC or desktop computer where you have installed one of the NoMachine server products. It provides a powerful connection interface, named the NoMachine Player, packed with all the features you need to work with your remote desktop. This package is available for those who prefer just a standalone "client-side" application, either because regulatory requirements dictate that connecting clients must stay as thin clients, or simply because a scaled-down client app is your personal preference. It's free to download and can be used to connect remotely from any Windows, Linux, Mac, ARM or Raspberry device to a computer where you have installed a NoMachine Enterprise product or the NoMachine Free Edition.</p>
-    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by NoMachine.</p>
   </description>
 
   <developer id="com.nomachine">
