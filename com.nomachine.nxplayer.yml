@@ -42,7 +42,7 @@ modules:
         only-arches:
           - x86_64
         url: https://download.nomachine.com/download/9.7/Linux/nomachine-enterprise-client_9.7.3_1_x86_64.tar.gz
-        sha256: 2c437090fb50ca1f491a6f4b094f1dac02c8c2e0cd1362abc3dd6808ae5938e9
+        sha256: a048318f9898345491c41eede1b58c7d699560e03c5bafd6cd0172676987ee57
         filename: nomachine-enterprise-client.tar.gz
         size: 61749843
 
