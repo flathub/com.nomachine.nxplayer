@@ -41,18 +41,18 @@ modules:
       - type: extra-data
         only-arches:
           - x86_64
-        url: https://download.nomachine.com/download/10.0/Linux/nomachine-enterprise-client_10.0.59_1_x86_64.tar.gz
-        sha256: ddcabd8adb029acfd26bbb9c6a9e907239608fee26619bbb107a9e52b4d964a9
+        url: https://download.nomachine.com/download/10.0/Linux/nomachine-enterprise-client_10.0.60_1_x86_64.tar.gz
+        sha256: 3a4a023040c44d981244e2bb7f971b450ad1a997c706a42fa7658f7b2f55bde8
         filename: nomachine-enterprise-client.tar.gz
-        size: 62884131
+        size: 62883577
 
       - type: extra-data
         only-arches:
           - aarch64
-        url: https://download.nomachine.com/download/10.0/Arm/nomachine-enterprise-client_10.0.59_3_aarch64.tar.gz
-        sha256: eff81f5677860a0b9cd19674c8e37a00b398a5da64d03a98d9cf0b5d5795d40e
+        url: https://download.nomachine.com/download/10.0/Arm/nomachine-enterprise-client_10.0.60_1_aarch64.tar.gz
+        sha256: f6cbcda3dc72409eb3a050beb2f27fb38af8629a909a8f8a622b98d9d33f7463
         filename: nomachine-enterprise-client.tar.gz
-        size: 63814746
+        size: 63816357
 
       - type: file
         path: data/com.nomachine.nxplayer.png
