@@ -5,11 +5,11 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
 
-  <name>NoMachine Enterprise Client</name>
-  <summary>Access NoMachine computers over the network</summary>
+  <name>NoMachine Player</name>
+  <summary>Everything you need to connect to your machines</summary>
 
   <description>
-    <p>Enterprise Client enables fast and secure access to your remote PC or desktop computer where you have installed one of the NoMachine server products. It provides a powerful connection interface, named the NoMachine Player, packed with all the features you need to work with your remote desktop. This package is available for those who prefer just a standalone "client-side" application, either because regulatory requirements dictate that connecting clients must stay as thin clients, or simply because a scaled-down client app is your personal preference. It's free to download and can be used to connect remotely from any Windows, Linux, Mac, ARM or Raspberry device to a computer where you have installed a NoMachine Enterprise product or the NoMachine Free Edition.</p>
+    <p>Use the NoMachine Player to reach any computer running NoMachine Personal Edition or a NoMachine Enterprise product. Free and easy to use, it lets you access your remote desktops, open terminal sessions and perform remote administration from anywhere.</p>
   </description>
 
   <developer id="com.nomachine">
@@ -39,7 +39,7 @@
   </categories>
 
   <releases>
-    <release version="10.1.7_1" date="2026-09-14"/>
+    <release version="10.2.3_1" date="2026-10-06"/>
   </releases>
 
 
