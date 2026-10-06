@@ -29,7 +29,7 @@ finish-args:
   - --socket=pcsc
 
 modules:
-  - name: nomachine-enterprise-client
+  - name: nomachine-player
     buildsystem: simple
     build-commands:
       - install -D $FLATPAK_ID.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
@@ -41,18 +41,18 @@ modules:
       - type: extra-data
         only-arches:
           - x86_64
-        url: https://web9001.nomachine.com/download/10.1/Linux/nomachine-enterprise-client_10.1.7_1_x86_64.tar.gz
-        sha256: aaf49c6d45754edecbc5882b36971db118e3022a69759fcbd67aed7aa7a40bc4
-        filename: nomachine-enterprise-client.tar.gz
-        size: 63090848
+        url: https://web9001.nomachine.com/download/10.2/Linux/nomachine-player_10.2.3_1_x86_64.tar.gz
+        sha256: 24e83dec495c6cb33ab9ce83080c1f1a7a32b6c12063f05216699d204e280b5a
+        filename: nomachine-player.tar.gz
+        size: 63581338
 
       - type: extra-data
         only-arches:
           - aarch64
-        url: https://web9001.nomachine.com/download/10.1/Arm/nomachine-enterprise-client_10.1.7_1_aarch64.tar.gz
-        sha256: 7e36e37c0b873c61d62f29cde862d63dc47fa5a989c2052c6e3003a367209542
-        filename: nomachine-enterprise-client.tar.gz
-        size: 63448774
+        url: https://web9001.nomachine.com/download/10.2/Arm/nomachine-player_10.2.3_1_aarch64.tar.gz
+        sha256: 67e5e3038567c975d0e370624f4452cef2cf98cdb62936c740d6fe92a987fbe3
+        filename: nomachine-player.tar.gz
+        size: 64496877
 
       - type: file
         path: data/com.nomachine.nxplayer.png
@@ -67,8 +67,8 @@ modules:
         dest-filename: apply_extra
         commands:
           - |
-            tar -xf nomachine-enterprise-client.tar.gz --strip-components=0
-            NX_INSTALL_PREFIX=/app/extra ./NX/nxclient --install fedora > /dev/null 2>&1
+            tar -xf nomachine-player.tar.gz --strip-components=0
+            NX_INSTALL_PREFIX=/app/extra ./NX/nxinstall --install fedora > /dev/null 2>&1
             rm /app/extra/NX/lib/libstdc++.so.6 #remove the bundled libstdc++.so.6 to avoid conflicts with runtime libs
 
       - type: script
