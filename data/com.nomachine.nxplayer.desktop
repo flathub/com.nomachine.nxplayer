@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=NoMachine Enterprise Client
-Comment=Access NoMachine computers over the network
+Name=NoMachine Player
+Comment=Everything you need to connect to your machines
 Exec=launch_nxplayer
 Icon=com.nomachine.nxplayer
 Terminal=false
